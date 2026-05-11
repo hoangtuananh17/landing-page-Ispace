@@ -6,6 +6,7 @@
     <title>Tư Vấn Thiết Kế Không Gian - I-Space</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -25,23 +26,15 @@
         }
     </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #f7f9f8; }
         
-        /* Hiệu ứng mượt mà khi chuyển bước */
         .step { display: none; opacity: 0; transition: opacity 0.3s ease-in-out; }
         .step.active { display: block; opacity: 1; animation: fadeIn 0.4s; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* Custom Checkbox Styles */
         .custom-checkbox:checked + label { background-color: #e8ecea; border-color: #4a5d54; font-weight: 600; color: #324039; }
-        
-        /* Lớp phủ mờ cho Video */
-        .hero-overlay {
-            background: linear-gradient(to bottom, rgba(50, 64, 57, 0.75), rgba(74, 93, 84, 0.95));
-        }
-        
-        /* Ngăn thanh cuộn ngang trên mobile */
+        .hero-overlay { background: linear-gradient(to bottom, rgba(50, 64, 57, 0.75), rgba(74, 93, 84, 0.95)); }
         html, body { max-width: 100%; overflow-x: hidden; }
     </style>
 </head>
@@ -77,12 +70,8 @@
             <div class="text-center mb-8 sm:mb-10 pb-6 border-b border-gray-100">
                 <h2 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-3 sm:mb-4">Bắt đầu câu chuyện không gian của bạn</h2>
                 <div class="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-                    <p class="mb-3">
-                        Trước khi bắt đầu thiết kế, cải tạo hay hoàn thiện căn hộ, I-Space muốn hiểu rõ hơn về hiện trạng, nhu cầu, ngân sách và thời điểm triển khai của anh/chị.
-                    </p>
-                    <p>
-                        Bộ câu hỏi ngắn này giúp chúng tôi đánh giá mức độ phù hợp ban đầu và đề xuất bước tiếp theo: tư vấn cải tạo, thiết kế, thiết kế + thi công, hoặc một buổi <strong class="text-brand">Thảo luận nhịp sống</strong> để làm rõ <strong class="text-brand">Bản đề bài cuộc sống</strong> trước khi bắt đầu.
-                    </p>
+                    <p class="mb-3">Trước khi bắt đầu thiết kế, cải tạo hay hoàn thiện căn hộ, I-Space muốn hiểu rõ hơn về hiện trạng, nhu cầu, ngân sách và thời điểm triển khai của anh/chị.</p>
+                    <p>Bộ câu hỏi ngắn này giúp chúng tôi đánh giá mức độ phù hợp ban đầu và đề xuất bước tiếp theo: tư vấn cải tạo, thiết kế, thiết kế + thi công, hoặc một buổi <strong class="text-brand">Thảo luận nhịp sống</strong> để làm rõ <strong class="text-brand">Bản đề bài cuộc sống</strong> trước khi bắt đầu.</p>
                 </div>
             </div>
 
@@ -107,7 +96,7 @@
 
                     <div class="mb-5">
                         <label class="block text-sm sm:text-base font-semibold mb-2 text-gray-700">2. Số điện thoại/Zalo liên hệ chính</label>
-                        <input type="tel" name="so_dien_thoai" placeholder="09xx xxx xxx" required class="text-base w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand focus:ring-opacity-50 outline-none transition bg-gray-50 focus:bg-white">
+                        <input type="tel" name="so_dien_thoai" placeholder="Ví dụ: 0912345678" required class="text-base w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand focus:ring-opacity-50 outline-none transition bg-gray-50 focus:bg-white">
                     </div>
 
                     <div class="mb-5">
@@ -216,7 +205,8 @@
 
                     <div class="flex flex-col-reverse sm:flex-row justify-between mt-8 border-t pt-6 border-gray-100 gap-3 sm:gap-4">
                         <button type="button" onclick="changeStep(3, 2)" class="text-gray-500 hover:text-gray-800 bg-gray-100 sm:bg-transparent rounded-lg sm:rounded-none font-semibold px-4 py-3.5 sm:py-3 transition text-center w-full sm:w-auto">Quay lại</button>
-                        <button type="submit" id="submitBtn" class="bg-brand hover:bg-brand-dark text-white px-8 py-3.5 sm:py-3 rounded-lg font-bold transition shadow-lg w-full sm:w-auto text-base">Gửi thông tin sơ bộ</button>
+                        
+                        <button type="submit" id="submitBtn" class="bg-brand hover:bg-brand-dark text-white px-8 py-3.5 sm:py-3 rounded-lg font-bold transition-all duration-300 shadow-[0_4px_15px_rgba(74,93,84,0.4)] hover:shadow-[0_6px_20px_rgba(74,93,84,0.6)] hover:-translate-y-1 w-full sm:w-auto text-base">Gửi thông tin sơ bộ</button>
                     </div>
                 </div>
 
@@ -251,6 +241,8 @@
 
     <script>
         function changeStep(current, next) {
+            const form = document.getElementById('ispaceForm');
+            
             if(current < next) {
                 const currentStepDiv = document.getElementById(`step-${current}`);
                 const requiredInputs = currentStepDiv.querySelectorAll('[required]');
@@ -262,6 +254,16 @@
                     }
                 });
                 
+                // VALIDATION: Kiểm tra định dạng số điện thoại ở bước 1
+                if (current === 1 && isValid) {
+                    const phoneInput = form.querySelector('input[name="so_dien_thoai"]').value;
+                    const phoneRegex = /^(0[3|5|7|8|9])+([0-9]{8})$/;
+                    if (!phoneRegex.test(phoneInput.replace(/\s+/g, ''))) {
+                        alert('Anh/chị vui lòng nhập đúng định dạng số điện thoại Việt Nam (ví dụ: 0912345678).');
+                        return; // Dừng, không cho qua bước tiếp theo
+                    }
+                }
+
                 if (current === 2) {
                     const checkboxes = currentStepDiv.querySelectorAll('input[name="van_de"]:checked');
                     if (checkboxes.length > 3) {
@@ -290,16 +292,14 @@
                 }
             }
             
-            // Cuộn mượt mà lên đầu form trên Mobile để khách hàng không phải vuốt tay lên
             if (next > current) {
-                const yOffset = -80; // Trừ hao khoảng cách của navbar/header
+                const yOffset = -80; 
                 const element = document.getElementById('form-section');
                 const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
                 window.scrollTo({top: y, behavior: 'smooth'});
             }
         }
 
-        // Script giới hạn chọn tối đa 3 checkbox ở câu 7
         document.querySelectorAll('input[name="van_de"]').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 const checkedCount = document.querySelectorAll('input[name="van_de"]:checked').length;
@@ -331,40 +331,43 @@
                 }
             }
 
-            const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxjdkVDJ8dCxipMac27agEBYsBy48MXIoNCM2TtwpMHl7j22UAr0HXg6bYXvymQHClh/exec'; 
+            // Tự động lấy nguồn quảng cáo (UTM Tracking)
+            const urlParams = new URLSearchParams(window.location.search);
+            dataObj['Nguồn_Quảng_Cáo'] = urlParams.get('utm_campaign') || urlParams.get('utm_source') || 'Tự nhiên / Trực tiếp';
 
-            // Giả lập gửi thành công
-            // Gửi dữ liệu thật về Google Sheets
-fetch(WEBHOOK_URL, {
-    method: 'POST',
-    mode: 'no-cors', // Bắt buộc dùng no-cors cho Google Apps Script
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(dataObj)
-})
-.then(() => {
-    // Khi gửi thành công, chuyển sang thông báo Cảm ơn
-    document.getElementById('step-3').classList.remove('active');
-    document.getElementById('step-success').classList.add('active');
-    document.getElementById('progress-bar').style.width = `100%`;
-    
-    // Tự động cuộn lên thông báo thành công
-    const yOffset = -80;
-    const element = document.getElementById('form-section');
-    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({top: y, behavior: 'smooth'});
+            // Đường link Webhook Google Sheets
+            const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwbnwiwtogc11gu6gOUbQjW0RC3JVTarx8urmxCMLTytwRDme1y2Jv02Ux_buxiqBDw/exec'; 
 
-    // NẾU CÓ CHẠY QUẢNG CÁO, KÍCH HOẠT TRACKING PIXEL Ở ĐÂY
-    // Ví dụ: fbq('track', 'Lead');
-})
-.catch(error => {
-    console.error('Error!', error.message);
-    alert('Có lỗi xảy ra kết nối, anh/chị vui lòng thử lại sau.');
-    btn.disabled = false;
-    btn.classList.remove('opacity-50', 'cursor-not-allowed');
-    loading.classList.add('hidden');
-});
+            fetch(WEBHOOK_URL, {
+                method: 'POST',
+                mode: 'no-cors', 
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dataObj)
+            })
+            .then(() => {
+                document.getElementById('step-3').classList.remove('active');
+                document.getElementById('step-success').classList.add('active');
+                document.getElementById('progress-bar').style.width = `100%`;
+                
+                const yOffset = -80;
+                const element = document.getElementById('form-section');
+                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+
+                // Bắn pháo giấy chúc mừng
+                if (typeof confetti === 'function') {
+                    confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 }, colors: ['#4a5d54', '#e8ecea', '#ffffff'] });
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert('Có lỗi xảy ra kết nối, anh/chị vui lòng thử lại sau.');
+                btn.disabled = false;
+                btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                loading.classList.add('hidden');
+            });
         }
     </script>
 </body>
