@@ -319,20 +319,33 @@
             const formData = new FormData(form);
             
             const dataObj = {};
-            for (let [key, value] of formData.entries()) {
-                if (dataObj[key]) {
-                    dataObj[key] += ', ' + value; 
-                } else {
-                    dataObj[key] = value;
-                }
-            }
+
+for (let [key, value] of formData.entries()) {
+
+    // Nếu field đã tồn tại
+    if (dataObj[key]) {
+
+        // Nếu chưa phải array -> chuyển thành array
+        if (!Array.isArray(dataObj[key])) {
+            dataObj[key] = [dataObj[key]];
+        }
+
+        // Push thêm value mới
+        dataObj[key].push(value);
+
+    } else {
+
+        // Gán lần đầu
+        dataObj[key] = value;
+    }
+}
 
             // Tự động lấy nguồn quảng cáo (UTM Tracking)
             const urlParams = new URLSearchParams(window.location.search);
             dataObj['Nguồn_Quảng_Cáo'] = urlParams.get('utm_campaign') || urlParams.get('utm_source') || 'Tự nhiên / Trực tiếp';
 
             // Đường link Webhook Google Sheets
-            const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbx8VfY-cKXws4jIifNF9lAbAfxoHy87AW2FQZ1numi6NKOG-LIRE6-Bqaz77_sZh5TH/exec'; 
+            const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwvXZ5LyuqBon_ifnpXn2l52cPtCB2kaYxSKjWW6sVBwe-6-iB-_bf42yDTPaMMSms_/exec'; 
 
             fetch(WEBHOOK_URL, {
                 method: 'POST',
