@@ -119,11 +119,11 @@
                         <label class="block text-sm sm:text-base font-semibold mb-3 text-gray-700">5. Tình trạng căn hộ hiện tại của anh/chị là gì?</label>
                         <select name="tinh_trang" required class="text-base w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand outline-none transition bg-white appearance-none cursor-pointer">
                             <option value="">-- Vui lòng chọn --</option>
-                            <option value="Mới nhận bàn giao">Mới nhận bàn giao, chưa hoàn thiện</option>
-                            <option value="Chuẩn bị nhận">Đang chuẩn bị nhận bàn giao</option>
-                            <option value="Đã ở, muốn cải tạo">Đã ở một thời gian, muốn cải tạo/làm mới</option>
-                            <option value="Mua cũ cải tạo">Mua lại căn hộ cũ để cải tạo ở lâu dài</option>
-                            <option value="Cho thuê">Hoàn thiện để cho thuê</option>
+                            <option value="Mới nhận bàn giao, chưa hoàn thiện">Mới nhận bàn giao, chưa hoàn thiện</option>
+                            <option value="Đang chuẩn bị nhận bàn giao">Đang chuẩn bị nhận bàn giao</option>
+                            <option value="Đã ở một thời gian, muốn cải tạo/làm mới">Đã ở một thời gian, muốn cải tạo/làm mới</option>
+                            <option value="Mua lại căn hộ cũ để cải tạo ở lâu dài">Mua lại căn hộ cũ để cải tạo ở lâu dài</option>
+                            <option value="Hoàn thiện để cho thuê">Hoàn thiện để cho thuê</option>
                             <option value="Khác">Khác</option>
                         </select>
                     </div>
@@ -132,25 +132,25 @@
                         <label class="block text-sm sm:text-base font-semibold mb-3 text-gray-700">6. Mục đích sử dụng căn hộ của anh/chị là gì?</label>
                         <select name="muc_dich" required class="text-base w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand outline-none transition bg-white appearance-none cursor-pointer">
                             <option value="">-- Vui lòng chọn --</option>
-                            <option value="Ở lâu dài">Ở lâu dài cùng gia đình</option>
-                            <option value="Ở tạm rồi bán/thuê">Ở một thời gian rồi có thể chuyển nhượng/cho thuê</option>
-                            <option value="Cho thuê">Hoàn thiện để cho thuê</option>
-                            <option value="Nghỉ cuối tuần">Căn hộ nghỉ cuối tuần/ở không thường xuyên</option>
-                            <option value="Chưa rõ">Chưa rõ, muốn được tư vấn thêm</option>
+                            <option value="Ở lâu dài cùng gia đình">Ở lâu dài cùng gia đình</option>
+                            <option value="Ở một thời gian rồi có thể chuyển nhượng/cho thuê">Ở một thời gian rồi có thể chuyển nhượng/cho thuê</option>
+                            <option value="Hoàn thiện để cho thuê">Hoàn thiện để cho thuê</option>
+                            <option value="Căn hộ nghỉ cuối tuần/ở không thường xuyên">Căn hộ nghỉ cuối tuần/ở không thường xuyên</option>
+                            <option value="Chưa rõ, muốn được tư vấn thêm">Chưa rõ, muốn được tư vấn thêm</option>
                         </select>
                     </div>
 
                     <div class="mb-6">
                         <label class="block text-sm sm:text-base font-semibold mb-3 text-gray-700">7. Điều gì đang khiến anh/chị muốn cải tạo/hoàn thiện? <span class="text-gray-400 font-normal block sm:inline text-xs sm:text-sm mt-1 sm:mt-0">(Chọn tối đa 3)</span></label>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-                            <div class="relative"><input type="checkbox" id="q7_1" name="van_de" value="Nhà rối, bí, mệt" class="custom-checkbox hidden"><label for="q7_1" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Nhà đủ đồ nhưng vẫn rối, bí và mệt</label></div>
-                            <div class="relative"><input type="checkbox" id="q7_2" name="van_de" value="Thiếu lưu trữ" class="custom-checkbox hidden"><label for="q7_2" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Nhà không quá nhỏ nhưng luôn thiếu chỗ lưu trữ</label></div>
-                            <div class="relative"><input type="checkbox" id="q7_3" name="van_de" value="Không thư giãn" class="custom-checkbox hidden"><label for="q7_3" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Nhà vẫn ở được nhưng không có cảm giác thư giãn</label></div>
-                            <div class="relative"><input type="checkbox" id="q7_4" name="van_de" value="Thiếu kết nối" class="custom-checkbox hidden"><label for="q7_4" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Không có không gian chung để kết nối các thành viên</label></div>
-                            <div class="relative"><input type="checkbox" id="q7_5" name="van_de" value="Bếp chưa tiện" class="custom-checkbox hidden"><label for="q7_5" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Bếp chưa tiện, chưa ấm, chưa tạo cảm hứng</label></div>
-                            <div class="relative"><input type="checkbox" id="q7_6" name="van_de" value="Đẹp không phô trương" class="custom-checkbox hidden"><label for="q7_6" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Tôi muốn nhà đẹp hơn nhưng không phô trương</label></div>
-                            <div class="relative"><input type="checkbox" id="q7_7" name="van_de" value="Làm mới không phá bỏ" class="custom-checkbox hidden"><label for="q7_7" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Tôi muốn làm mới nhưng không muốn phá bỏ tất cả</label></div>
-                            <div class="relative"><input type="checkbox" id="q7_8" name="van_de" value="Không biết bắt đầu" class="custom-checkbox hidden"><label for="q7_8" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Tôi không biết nên bắt đầu từ đâu</label></div>
+                            <div class="relative"><input type="checkbox" id="q7_1" name="van_de" value="Nhà đủ đồ nhưng vẫn rối, bí và mệt" class="custom-checkbox hidden"><label for="q7_1" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Nhà đủ đồ nhưng vẫn rối, bí và mệt</label></div>
+                            <div class="relative"><input type="checkbox" id="q7_2" name="van_de" value="Nhà không quá nhỏ nhưng luôn thiếu chỗ lưu trữ" class="custom-checkbox hidden"><label for="q7_2" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Nhà không quá nhỏ nhưng luôn thiếu chỗ lưu trữ</label></div>
+                            <div class="relative"><input type="checkbox" id="q7_3" name="van_de" value="Nhà vẫn ở được nhưng không có cảm giác thư giãn" class="custom-checkbox hidden"><label for="q7_3" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Nhà vẫn ở được nhưng không có cảm giác thư giãn</label></div>
+                            <div class="relative"><input type="checkbox" id="q7_4" name="van_de" value="Không có không gian chung để kết nối các thành viên" class="custom-checkbox hidden"><label for="q7_4" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Không có không gian chung để kết nối các thành viên</label></div>
+                            <div class="relative"><input type="checkbox" id="q7_5" name="van_de" value="Bếp chưa tiện, chưa ấm, chưa tạo cảm hứng" class="custom-checkbox hidden"><label for="q7_5" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Bếp chưa tiện, chưa ấm, chưa tạo cảm hứng</label></div>
+                            <div class="relative"><input type="checkbox" id="q7_6" name="van_de" value="Tôi muốn nhà đẹp hơn nhưng không phô trương" class="custom-checkbox hidden"><label for="q7_6" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Tôi muốn nhà đẹp hơn nhưng không phô trương</label></div>
+                            <div class="relative"><input type="checkbox" id="q7_7" name="van_de" value="Tôi muốn làm mới nhưng không muốn phá bỏ tất cả" class="custom-checkbox hidden"><label for="q7_7" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Tôi muốn làm mới nhưng không muốn phá bỏ tất cả</label></div>
+                            <div class="relative"><input type="checkbox" id="q7_8" name="van_de" value="Tôi không biết nên bắt đầu từ đâu" class="custom-checkbox hidden"><label for="q7_8" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[60px]">Tôi không biết nên bắt đầu từ đâu</label></div>
                         </div>
                     </div>
 
@@ -166,11 +166,11 @@
                         <select name="ngan_sach" required class="text-base w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand outline-none transition bg-white appearance-none cursor-pointer">
                             <option value="">-- Vui lòng chọn --</option>
                             <option value="Dưới 300 triệu">Dưới 300 triệu</option>
-                            <option value="300-500 triệu">300–500 triệu</option>
-                            <option value="500-800 triệu">500–800 triệu</option>
-                            <option value="800-1.5 tỷ">800 triệu – 1,5 tỷ</option>
-                            <option value="Trên 1.5 tỷ">Trên 1,5 tỷ</option>
-                            <option value="Chưa xác định">Chưa xác định, cần được tư vấn</option>
+                            <option value="300-500 triệu">300-500 triệu</option>
+                            <option value="500-800 triệu">500-800 triệu</option>
+                            <option value="800 triệu - 1,5 tỷ">800 triệu - 1,5 tỷ</option>
+                            <option value="Trên 1,5 tỷ">Trên 1,5 tỷ</option>
+                            <option value="Chưa xác định, cần được tư vấn">Chưa xác định, cần được tư vấn</option>
                         </select>
                     </div>
 
@@ -178,24 +178,24 @@
                         <label class="block text-sm sm:text-base font-semibold mb-3 text-gray-700">9. Anh/chị mong muốn bắt đầu triển khai khi nào?</label>
                         <select name="thoi_gian" required class="text-base w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-brand focus:ring-2 focus:ring-brand outline-none transition bg-white appearance-none cursor-pointer">
                             <option value="">-- Vui lòng chọn --</option>
-                            <option value="Trong 1 tháng">Trong 1 tháng tới</option>
-                            <option value="1-3 tháng">Trong 1–3 tháng tới</option>
-                            <option value="3-6 tháng">Trong 3–6 tháng tới</option>
+                            <option value="Trong 1 tháng tới">Trong 1 tháng tới</option>
+                            <option value="Trong 1-3 tháng tới">Trong 1-3 tháng tới</option>
+                            <option value="Trong 3-6 tháng tới">Trong 3-6 tháng tới</option>
                             <option value="Sau 6 tháng">Sau 6 tháng</option>
-                            <option value="Đang tìm hiểu">Chưa có mốc cụ thể, đang tìm hiểu trước</option>
+                            <option value="Chưa có mốc cụ thể, đang tìm hiểu trước">Chưa có mốc cụ thể, đang tìm hiểu trước</option>
                         </select>
                     </div>
 
                     <div class="mb-6">
                         <label class="block text-sm sm:text-base font-semibold mb-3 text-gray-700">10. Ở giai đoạn đầu, anh/chị mong I-Space hỗ trợ điều gì nhất?</label>
                         <div class="grid grid-cols-1 gap-3 sm:gap-4">
-                            <div class="relative"><input type="checkbox" id="q10_1" name="ho_tro" value="Nhìn lại hiện trạng" class="custom-checkbox hidden"><label for="q10_1" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Nhìn lại hiện trạng để biết căn hộ đang vướng ở đâu</label></div>
-                            <div class="relative"><input type="checkbox" id="q10_2" name="ho_tro" value="Tư vấn cải tạo cục bộ" class="custom-checkbox hidden"><label for="q10_2" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Tư vấn cải tạo/làm mới một số khu vực quan trọng</label></div>
-                            <div class="relative"><input type="checkbox" id="q10_3" name="ho_tro" value="Lập phương án" class="custom-checkbox hidden"><label for="q10_3" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Lập phương án thiết kế bài bản trước khi thi công</label></div>
-                            <div class="relative"><input type="checkbox" id="q10_4" name="ho_tro" value="Trọn gói" class="custom-checkbox hidden"><label for="q10_4" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Thiết kế + thi công trọn gói</label></div>
-                            <div class="relative"><input type="checkbox" id="q10_5" name="ho_tro" value="Phân bổ ngân sách" class="custom-checkbox hidden"><label for="q10_5" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Phân bổ ngân sách: tối thiểu - tối ưu - đầy đủ</label></div>
-                            <div class="relative"><input type="checkbox" id="q10_6" name="ho_tro" value="Xem mặt bằng tư vấn" class="custom-checkbox hidden"><label for="q10_6" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Xem mặt bằng/ảnh hiện trạng rồi tư vấn hướng phù hợp</label></div>
-                            <div class="relative"><input type="checkbox" id="q10_7" name="ho_tro" value="Chưa rõ" class="custom-checkbox hidden"><label for="q10_7" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Chưa rõ, muốn được I-Space định hướng bước tiếp theo</label></div>
+                            <div class="relative"><input type="checkbox" id="q10_1" name="ho_tro" value="Nhìn lại hiện trạng để biết căn hộ đang vướng ở đâu" class="custom-checkbox hidden"><label for="q10_1" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Nhìn lại hiện trạng để biết căn hộ đang vướng ở đâu</label></div>
+                            <div class="relative"><input type="checkbox" id="q10_2" name="ho_tro" value="Tư vấn cải tạo/làm mới một số khu vực quan trọng" class="custom-checkbox hidden"><label for="q10_2" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Tư vấn cải tạo/làm mới một số khu vực quan trọng</label></div>
+                            <div class="relative"><input type="checkbox" id="q10_3" name="ho_tro" value="Lập phương án thiết kế bài bản trước khi thi công" class="custom-checkbox hidden"><label for="q10_3" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Lập phương án thiết kế bài bản trước khi thi công</label></div>
+                            <div class="relative"><input type="checkbox" id="q10_4" name="ho_tro" value="Thiết kế + thi công trọn gói" class="custom-checkbox hidden"><label for="q10_4" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Thiết kế + thi công trọn gói</label></div>
+                            <div class="relative"><input type="checkbox" id="q10_5" name="ho_tro" value="Phân bổ ngân sách: tối thiểu - tối ưu - đầy đủ" class="custom-checkbox hidden"><label for="q10_5" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Phân bổ ngân sách: tối thiểu - tối ưu - đầy đủ</label></div>
+                            <div class="relative"><input type="checkbox" id="q10_6" name="ho_tro" value="Xem mặt bằng/ảnh hiện trạng rồi tư vấn hướng phù hợp" class="custom-checkbox hidden"><label for="q10_6" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Xem mặt bằng/ảnh hiện trạng rồi tư vấn hướng phù hợp</label></div>
+                            <div class="relative"><input type="checkbox" id="q10_7" name="ho_tro" value="Chưa rõ, muốn được I-Space định hướng bước tiếp theo" class="custom-checkbox hidden"><label for="q10_7" class="block w-full border border-gray-200 rounded-lg p-3 sm:p-4 cursor-pointer text-sm transition hover:bg-gray-50 flex items-center min-h-[50px]">Chưa rõ, muốn được I-Space định hướng bước tiếp theo</label></div>
                         </div>
                     </div>
 
@@ -205,7 +205,6 @@
 
                     <div class="flex flex-col-reverse sm:flex-row justify-between mt-8 border-t pt-6 border-gray-100 gap-3 sm:gap-4">
                         <button type="button" onclick="changeStep(3, 2)" class="text-gray-500 hover:text-gray-800 bg-gray-100 sm:bg-transparent rounded-lg sm:rounded-none font-semibold px-4 py-3.5 sm:py-3 transition text-center w-full sm:w-auto">Quay lại</button>
-                        
                         <button type="submit" id="submitBtn" class="bg-brand hover:bg-brand-dark text-white px-8 py-3.5 sm:py-3 rounded-lg font-bold transition-all duration-300 shadow-[0_4px_15px_rgba(74,93,84,0.4)] hover:shadow-[0_6px_20px_rgba(74,93,84,0.6)] hover:-translate-y-1 w-full sm:w-auto text-base">Gửi thông tin sơ bộ</button>
                     </div>
                 </div>
@@ -224,9 +223,6 @@
                     </div>
                 </div>
             </form>
-        </div>
-    </main>
-
     <footer class="bg-gray-900 text-gray-400 text-xs sm:text-sm py-8 text-center mt-auto">
         <div class="max-w-4xl mx-auto px-6">
             <p class="mb-1 text-gray-300"><strong>Interactive Space Design</strong></p>
